@@ -1,0 +1,30 @@
+//Read facebook dataset
+import pandas as pd
+data=pd.read_csv(r"C:\Users\cheta\Desktop\sanket\DSBDA\final lab\facebook.csv")
+data
+
+//Subset of data
+ss1=data.loc[0:5,["userid","age","tenure","likes"]]
+ss1
+ss2=data.iloc[[0,2,4,6,8,10,12],[0,1,5,7,8]]
+ss2
+
+//Merge data
+data_merged=pd.merge(ss1,ss2,on="userid")
+data_merged
+#giving 0 rows because here is no common userid in the two subsets we created
+
+data_merged1=pd.merge(data,ss1,on="userid")
+data_merged1
+
+//Sorting data
+data.sort_values("userid")   #sorting according to ascending order of userid
+data.sort_values("userid",ascending=False)  #sorting according to descending order of userid
+
+//Transposing Data
+data_transposed=data.T   #changes row elements into column and column elements into rows
+data_transposed
+
+//Shape and reshape Data
+ss1.shape   #gives no of rows and columns
+ss1.values.reshape(24)    #from above we have done 6x4=24
