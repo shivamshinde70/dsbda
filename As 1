@@ -1,3 +1,11 @@
+Perform the following operations using Python on the Facebook metrics data sets
+a. Create data subsets
+b. Merge Data
+c. Sort Data
+d. Transposing Data
+e. Shape and reshape Data
+
+
 //Read facebook dataset
 import pandas as pd
 data=pd.read_csv(r"C:\Users\cheta\Desktop\sanket\DSBDA\final lab\facebook.csv")
