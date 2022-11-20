@@ -1,0 +1,61 @@
+Visualize the data using Python libraries matplotlib, seaborn by plotting the graphs for assignment
+no. 2 and 3 ( Group B)
+
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv("E:\heartdisease.csv")
+df
+
+df.dropna()
+
+#scatter
+x=df['Age']
+y=df['Slope']
+plt.xlabel('Age')
+plt.ylabel('Slope')
+plt.title('Age Vs Slope')
+plt.scatter(x,y)
+plt.grid()
+plt.show()
+
+#pie
+x=df['Age']
+plt.xlabel('Age')
+plt.title('Age')
+plt.pie(x)
+plt.grid()
+plt.show()
+
+#line
+x=df['Age']
+y=df['Slope']
+plt.xlabel('Age')
+plt.ylabel('Slope')
+plt.title('Age Vs Slope')
+plt.plot(x,y,marker='o',color='b')
+plt.grid()
+plt.show()
+
+#Histogram
+x=df['Age']
+plt.xlabel('Age')
+plt.title('Age')
+plt.hist(x)
+plt.show()
+
+#bar
+x=df['Age']
+y=df['Slope']
+plt.xlabel('Age')
+plt.ylabel('Slope')
+plt.title('Age Histogram')
+plt.bar(x,y,color=['r','b'])
+plt.show()
+
+#Box
+x=df['Age']
+plt.xlabel('Age')
+plt.title('Age Piechart')
+plt.boxplot(x)
+plt.show()
+
