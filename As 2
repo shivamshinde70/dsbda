@@ -1,0 +1,53 @@
+import pandas as pd
+df=pd.read_csv("E:\heartdisease.csv")
+df
+
+df1=df.groupby('Age')['Slope'].mean()
+df1
+
+mean_Slope=df1.rename("meanSlope").reset_index()
+mean_Slope
+
+df2=df.merge(mean_Slope)
+df2
+
+stacked=df.stack()
+stacked
+
+stacked.unstack()
+
+df3=df.T
+df3
+
+df.dropna()
+df.dropna(inplace=True)
+df
+
+df.fillna('nodata')
+df.fillna('6',inplace=True)
+x=df["Age"].mean()
+x
+
+x=df["Age"].median()
+x
+
+x=df["Age"].mode()
+x
+
+df.loc[2,'Age']=45
+df
+
+for x in df.index:
+    if df.loc[x,"Age"]>60:
+        df.loc[x,"Age"]=60
+df
+
+for x in df.index:
+    if df.loc[x,"Age"]>60:
+        df.drop(x,inplace=True)
+        
+df
+
+print(df.duplicated())
+df.drop_duplicates(inplace=True)
+df
